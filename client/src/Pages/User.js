@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 
 function User(){
-  const [email, setEmail] = useState("")
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [password, setPassword] = useState("")
-  const [passwordConfirmation, setPasswordConfirmation] = useState("")
-  const [image, setImage] = useState("")
   const [show, setShow] = useState("password")
+  const [formData, setFormData] = useState(
+    {
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      password_confirmation: "",
+      image: ""
+    }
+  )
 
   function getUsers(){
     fetch('/users')
@@ -27,37 +31,42 @@ function User(){
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const userData = new FormData()
+    userData.append("user[first_name]", formData.first_name)
+    userData.append("user[last_name]", formData.last_name)
+    userData.append("user[email]", formData.email)
+    userData.append("user[password]", formData.password)
+    userData.append("user[password_confirmation]", formData.password_confirmation)
+    userData.append("user[image]", formData.image)
     fetch("/users", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        password,
-        password_confirmation: passwordConfirmation,
-        image: image
-      }),
+      body: userData,
     })
     .then(r => {
       if(r.ok){
-        r.json().then(data => setCurrentUser(data))
+        r.json().then(data => setCurrentUser(data, userData))
       }else{
-        r.json().then(e => handleError(e))
+        r.json().then(e => handleError(e, userData))
       }
     })
   }
 
 
-  function setCurrentUser(user){
+  function setCurrentUser(user, userData){
     console.log(user)
+    console.log(userData)
+    console.log(formData)
+    console.log("OKAY")
   }
 
-  function handleError(e){
+  function handleError(e, userData){
     console.log(e)
+    console.log(userData)
+    console.log(formData.image)
+    console.log("NOT OKAY")
   }
+
 
   return(
     <div>
@@ -68,8 +77,11 @@ function User(){
           name="first-name" 
           placeholder="John" 
           type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          value={formData.first_name}
+          onChange={(e) => setFormData({
+            ...formData, 
+            first_name: e.target.value
+          })}
           ></input>
       <label className="left"> Last Name: </label>
       <input 
@@ -77,8 +89,11 @@ function User(){
           name="last-name" 
           placeholder="Doe" 
           type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          value={formData.last_name}
+          onChange={(e) => setFormData({
+            ...formData,
+            last_name: e.target.value
+          })}
           ></input>
           <br/>
         <label className="left">Email: </label>
@@ -87,8 +102,12 @@ function User(){
           name="email" 
           placeholder="johndoe@gmail.com" 
           type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formData.email}
+          onChange={(e) => setFormData({
+            ...formData,
+            email: e.target.value
+            }
+          )}
           ></input>
           <br/>
           <label className="left">Password</label>
@@ -96,8 +115,11 @@ function User(){
           name="password" 
           placeholder="Password" 
           type={show}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={formData.password}
+          onChange={(e) => setFormData({
+            ...formData,
+            password: e.target.value
+          })}
           ></input>
           <br/>
         <label className="left"> Confirm Password</label>
@@ -105,8 +127,11 @@ function User(){
           name="password-confirmation" 
           placeholder="Confirm Password" 
           type={show}
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
+          value={formData.password_confirmation}
+          onChange={(e) => setFormData({
+            ...formData,
+            password_confirmation: e.target.value
+          })}
           ></input>
           <br/>
         <button onClick={e => showPass(e)}>SHOW PASSWORD?</button>
@@ -116,10 +141,10 @@ function User(){
       id="image"
       type="file"
       accept="image/*"
-      onChange={(e) => {
-        setImage(e.target.files[0])
-        console.log(e.target.files[0])
-        }
+      onChange={(e) => setFormData({
+        ...formData,
+        image: e.target.files[0]
+      })
       }>
       </input>
       <button onClick={e => handleSubmit(e)}>SIGN UP</button>
