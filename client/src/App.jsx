@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Route, Routes } from 'react-router-dom'; 
 import './App.css';
 import NavBar from './Components/NavBar';
 import User from './Pages/User';
 import HomePage from './Pages/HomePage';
+import { UserContext } from './Context/user';
 
 function App() {
+
+
   return (
     <div className="App">
       <NavBar />

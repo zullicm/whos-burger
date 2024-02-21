@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  skip_before_action :authorized
   def index
     @users = User.all
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     user = User.find_by(id: session[:user_id]) 
     if user
       if user.image.attached?
-        render json: user.as_json.merge(image_url: url_for(usger.image))
+        render json: user.as_json.merge(image_url: url_for(user.image))
       else
         render json: user.as_json.merge(image_url: nil)
       end
