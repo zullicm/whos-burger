@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "../Context/user";
+import { UserContext } from "../../Context/user";
 
 function LoginForm({changeForm}){
   const [show, setShow] = useState("password")
