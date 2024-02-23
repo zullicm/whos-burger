@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :drinks
+  resources :shakes
+  resources :sides
   resources :burgers
   resources :users
   post "/login", to: "sessions#create"

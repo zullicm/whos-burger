@@ -29,9 +29,10 @@ skip_before_action :authorized
   def create
     burger = Burger.create(burger_params)
     if burger.valid?
-      rebder json: burger, status: :created
+      render json: burger, status: :created
     else
       render json: {errors: burger.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   private
