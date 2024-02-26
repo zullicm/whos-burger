@@ -35,8 +35,9 @@ function CreateBurger(){
     ]
     const filterIngredients = ingredients.filter(ingredient => ingredient !== null)
     const burger = new FormData
-    burger.append("burger[ingredients]", filterIngredients)
-    burger.append("burger[price]", 10.00)
+    filterIngredients.forEach(ing => burger.append("ingredients[]", ing))
+    // burger.append("burger[ingredients]", filterIngredients)
+    burger.append("price", 10.10)
     console.log(burger)
     fetch("/burgers", {
       method: "POST",

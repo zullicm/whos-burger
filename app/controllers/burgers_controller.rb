@@ -38,7 +38,7 @@ skip_before_action :authorized
   private
 
   def burger_params
-    params.require(:burger).permit(:ingredients, :price, :image)
+    params.permit({:ingredients => []}, :price, :image)
   end
 
   def find_burger
