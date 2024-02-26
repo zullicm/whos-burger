@@ -8,6 +8,11 @@ function CreateBurger(){
   const [burgers, setBurgers] = useState([])
   
 
+  function getBurgers(){
+    fetch("/burgers")
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
 
   useEffect(() =>{
     fetch('/burgers')
@@ -28,11 +33,11 @@ function CreateBurger(){
       pickles? "pickles" : null,
       onion? "onion" : null,
     ]
-    console.log(ingredients.filter(ingredient => ingredient !== null))
+    const filterIngredients = ingredients.filter(ingredient => ingredient !== null)
     const burger = new FormData
-    burger.append("burger[ingredients]", ingredients)
+    burger.append("burger[ingredients]", filterIngredients)
     burger.append("burger[price]", 10.00)
-
+    console.log(burger)
     fetch("/burgers", {
       method: "POST",
       body: burger,
@@ -84,6 +89,7 @@ function CreateBurger(){
       <br/>
       <button onClick={handleSubmit}>Create Burger</button>
       <br/>
+      <button onClick={getBurgers} >All Burgers</button>
       
     </div>
   )
