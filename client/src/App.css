@@ -74,3 +74,35 @@
 .navbar li:hover{
   background-color: #777;
 }
+
+.menu{
+  margin: 5vw 10vw;
+  border: black;
+  border-style: solid;
+  border-width: 5px;
+  background-color: #999;
+}
+
+.burger-container{
+  border: black;
+  border-style: solid;
+  border-width: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+.burger-card{
+  border: white;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  width: 40%;
+}
+
+.burger-card img{
+  object-fit: cover;
+  width: 100%;
+  transform: translate(0%, -30%);
+}

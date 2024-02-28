@@ -1,10 +1,10 @@
 import React from "react";
 
-function BurgerCard(){
+function BurgerCard({burger, picture}){
 
   return(
-    <div>
-      BurgerCard
+    <div className="burger-card">
+      <img src={picture} />
     </div>
   )
 }
