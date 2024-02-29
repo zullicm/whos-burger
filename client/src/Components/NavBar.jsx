@@ -1,11 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from '../Assets/Logo.png'
+
 
 function NavBar(){
 
   return(
     <nav className="navbar" >
-      <NavLink className="site-logo" exact to="/">Who's Burger</NavLink>
+      <img src={Logo} />
       <ul>
         <li>
           <NavLink className="navbar-item" exact to="/menu">Menu</NavLink>
