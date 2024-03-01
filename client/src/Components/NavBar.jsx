@@ -7,7 +7,7 @@ function NavBar(){
 
   return(
     <nav className="navbar" >
-      <img src={Logo} />
+      <NavLink><img src={Logo}/></NavLink>
       <ul>
         <li>
           <NavLink className="navbar-item" exact to="/menu">Menu</NavLink>
@@ -24,10 +24,10 @@ function NavBar(){
           <li>
           <NavLink className="navbar-item" exact to="/cart">Cart</NavLink>
           </li>
-          <li>
-          <NavLink className="navbar-item" exact to="/profile">Profile</NavLink>
-        </li>
       </ul>
+      <div className=" nav-profile">
+        <NavLink className="navbar-item" exact to="/profile">Profile</NavLink>
+      </div>
     </nav>
   )
 }
