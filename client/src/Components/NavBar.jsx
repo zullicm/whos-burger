@@ -8,22 +8,22 @@ function NavBar(){
 
   return(
     <nav className="navbar" >
-      <img src={Logo} onClick={() => navigate('')} />
+      <img src={Logo} title="Who's Burger Homepage" onClick={() => navigate('')} />
       <ul>
-        <li onClick={() => navigate('menu')}>
-          <NavLink className="navbar-item" exact to="/menu">Menu</NavLink>
+        <li onClick={() => navigate('menu')} title="Menu">
+          <a className="navbar-item">Menu</a>
           </li>
-          <li onClick={() => navigate('botm')}>
-          <NavLink className="navbar-item" exact to="/botm">BOTM</NavLink>
+          <li onClick={() => navigate('botm')} title="BOTM">
+          <a className="navbar-item">BOTM</a>
           </li>
-          <li onClick={() => navigate('about')}>
-          <NavLink className="navbar-item" exact to="/about">About</NavLink>
+          <li onClick={() => navigate('about')} title="About">
+          <a className="navbar-item" >About</a>
           </li>
-          <li onClick={() => navigate('contact')}>
-          <NavLink className="navbar-item" exact to="/contact">Contact</NavLink>
+          <li onClick={() => navigate('contact')} title="Contact">
+          <a className="navbar-item" >Contact</a>
           </li>
-          <li onClick={() => navigate('cart')}>
-          <NavLink className="navbar-item" exact to="/cart">Cart</NavLink>
+          <li onClick={() => navigate('cart')} title="Cart">
+          <a className="navbar-item">Cart</a>
           </li>
       </ul>
       <div className=" nav-profile">
