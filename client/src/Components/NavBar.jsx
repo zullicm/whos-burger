@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Logo from '../Assets/Logo.png'
 
 
@@ -27,7 +27,7 @@ function NavBar(){
           </li>
       </ul>
       <div className=" nav-profile">
-        <NavLink className="navbar-item" exact to="/profile">Profile</NavLink>
+        <a className="navbar-item" exact to="/profile">Profile</a>
       </div>
     </nav>
   )
