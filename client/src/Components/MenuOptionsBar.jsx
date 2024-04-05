@@ -5,9 +5,9 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
 
   return(
     <div>
-      <ul>
+      <ul className="options-bar">
         <li>
-          <button onClick={() => { 
+          <button id="burger-button" onClick={() => { 
             burgerRef.current?.scrollIntoView({
               behavior: 'smooth'
             })}}>
@@ -15,7 +15,7 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
             </button>
         </li>
         <li>
-          <button onClick={() => { 
+          <button id="combo-button" onClick={() => { 
             comboRef.current?.scrollIntoView({
               behavior: 'smooth'
             })}}>
@@ -23,7 +23,7 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
             </button>
         </li>
         <li>
-          <button onClick={() => { 
+          <button id="side-button" onClick={() => { 
             sideRef.current?.scrollIntoView({
               behavior: 'smooth'
             })
@@ -32,7 +32,7 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
             </button>
         </li>
         <li>
-          <button onClick={() => { 
+          <button id="drink-button" onClick={() => { 
             drinkRef.current?.scrollIntoView({
               behavior: 'smooth'
             })}}>
@@ -40,7 +40,7 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
             </button>
         </li>
         <li>
-          <button onClick={() => { 
+          <button id="shake-button" onClick={() => { 
             shakeRef.current?.scrollIntoView({
               behavior: 'smooth'
             })}}>

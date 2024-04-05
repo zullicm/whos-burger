@@ -1,15 +1,14 @@
-
-*{
-  scroll-behavior: smooth;
-}
-
-
 .App {
   text-align: center;
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
+  
+}
+
+button{
+  font-family: "Source Code Pro", monospace;
 }
 
 
@@ -91,6 +90,10 @@
   border-style: solid;
   grid-template-columns: repeat(3, 1fr);
   background-color: rgb(105, 105, 105);
+  
+}
+.menu-section-header{
+  scroll-margin-top: 2rem;
 }
 
 .menu-item{
@@ -121,10 +124,59 @@
 .menu-image{
   overflow: hidden;
   height: 73%;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .menu-item img{
   width: 100%;
   transform: translate(0%, -15%);
+}
+
+.options-bar{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 0%;
+  margin: auto;
+  height: 100%;
+  width: 50%;
+}
+
+.options-bar li{
+  display: grid;
+  align-items: center;
+}
+
+#burger-button{
+  background-image: url("../src/Assets/buttons/burger.png");
+}
+#combo-button{
+  background-image: url("../src/Assets/buttons/combo.png");
+}
+#side-button{
+  background-image: url("../src/Assets/buttons/sides.png");
+}
+#drink-button{
+  background-image: url("../src/Assets/buttons/drink.png");
+}
+#shake-button{
+  background-image: url("../src/Assets/buttons/shake.png");
+}
+
+
+.options-bar button{
+  color: white;
+  height: 5rem;
+  background-position: 50%;
+  background-size: 12rem;
+  text-shadow: 1px 1px 2px white;
+  transition: all 1s ease;
+  border-style: hidden;
+}
+
+.options-bar button:hover{
+  transition: all 1s ease;
+  background-size: 23rem;
 }
