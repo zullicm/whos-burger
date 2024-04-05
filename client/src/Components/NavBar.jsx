@@ -7,7 +7,7 @@ function NavBar(){
   const navigate = useNavigate()
 
   return(
-    <nav className="navbar" >
+    <header className="navbar" >
       <img src={Logo} title="Who's Burger Homepage" onClick={() => navigate('')} />
       <ul>
         <li onClick={() => navigate('menu')} title="Menu">
@@ -29,7 +29,7 @@ function NavBar(){
       <div className=" nav-profile">
         <a className="navbar-item" exact to="/profile">Profile</a>
       </div>
-    </nav>
+    </header>
   )
 }
 

@@ -12,6 +12,25 @@ button{
 }
 
 
+#footer{
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-sec1 p{
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 1rem;
+}
+
+#footer img{
+  max-height: 16rem;
+}
+
 /* ----- NAVBAR ----- */
 
 .navbar{
@@ -78,9 +97,6 @@ button{
 
 
 /* ----- MENU ----- */
-
-/* .menu{
-} */
 
 .menu-section-container{
   display: grid;
@@ -180,3 +196,4 @@ button{
   transition: all 1s ease;
   background-size: 23rem;
 }
+
