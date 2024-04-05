@@ -1,9 +1,9 @@
 import React from "react";
 
-function MenuItem({name, picture, scroll}){
+function MenuItem({name, picture}){
 
   return(
-    <div ref={scroll} className="menu-item">
+    <div className="menu-item">
       <div className="menu-image">
         <img src={picture} />
       </div>

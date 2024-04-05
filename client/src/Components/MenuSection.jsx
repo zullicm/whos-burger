@@ -5,9 +5,9 @@ function MenuSection({title, foods, img, scroll}){
 
   return(
     <>
-      <h1>{title}</h1>
+      <h1 ref={scroll}>{title}</h1>
       <div className="menu-section-container">
-        {foods.map(food => <MenuItem key={food} name={food} picture={img} scroll={scroll} />)}
+        {foods.map(food => <MenuItem key={food} name={food} picture={img} />)}
       </div>
     </>
   )
