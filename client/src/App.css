@@ -27,6 +27,15 @@ button{
   margin-bottom: 1rem;
 }
 
+.footer-sec2 p{
+  text-align: right;
+}
+
+.footer-sec3 p{
+  text-align: right;
+  padding-right: 1rem;
+}
+
 #footer img{
   max-height: 16rem;
 }
