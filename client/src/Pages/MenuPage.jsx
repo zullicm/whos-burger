@@ -23,7 +23,6 @@ function MenuPage(){
 
   return(
     <div className="menu">
-      <h3>Menu</h3>
       <MenuOptionsBar 
       burgerRef={burgerRef}  
       comboRef={comboRef}

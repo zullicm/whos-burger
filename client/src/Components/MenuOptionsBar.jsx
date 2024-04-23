@@ -4,7 +4,8 @@ function MenuOptionsBar({burgerRef, comboRef, sideRef , drinkRef, shakeRef}){
 
 
   return(
-    <div>
+    <div className="menu-options-bar">
+      <h2>Menu</h2>
       <ul className="options-bar">
         <li>
           <button id="burger-button" onClick={() => { 

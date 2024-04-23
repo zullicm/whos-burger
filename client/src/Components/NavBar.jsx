@@ -6,10 +6,11 @@ import Logo from '../Assets/Logo.png'
 function NavBar(){
   const navigate = useNavigate()
 
+
   return(
     <header className="navbar" >
       <img src={Logo} title="Who's Burger Homepage" onClick={() => navigate('')} />
-      <ul>
+      <ul className="nav-middle">
         <li onClick={() => navigate('menu')} title="Menu">
           <a className="navbar-item">Menu</a>
           </li>
@@ -22,12 +23,16 @@ function NavBar(){
           <li onClick={() => navigate('contact')} title="Contact">
           <a className="navbar-item" >Contact</a>
           </li>
-          <li onClick={() => navigate('cart')} title="Cart">
-          <a className="navbar-item">Cart</a>
-          </li>
       </ul>
-      <div className=" nav-profile">
-        <a className="navbar-item" exact to="/profile">Profile</a>
+      <div>
+      <ul className="nav-end">
+        <li onClick={() => navigate('cart')} title="Cart">
+        <a className="navbar-item">Cart</a>
+        </li>
+        <li onClick={() => navigate('profile')} title="Profile">
+        <a className="navbar-item">Profile</a>
+        </li>
+      </ul>
       </div>
     </header>
   )

@@ -63,10 +63,20 @@ button{
   cursor: pointer;
 }
 
-.navbar ul{
+.nav-middle{
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0%;
+  margin: 0%;
+  height: 100%;
+}
+
+.nav-end{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 0%;
   margin: 0%;
@@ -93,22 +103,20 @@ button{
 
 }
 
-.nav-profile{
-  display: grid;
-  align-items: center;
-  text-align: right;
-}
-
-.navbnav-profile a.active{
-  background-color: #555;
-}
-
-.nav-profile a:hover{
-  background-color: #777;
-  cursor: pointer;
+.navbar div{
+padding-left: 65%;
 }
 
 /* ----- MENU ----- */
+
+.menu-options-bar{
+  background-color: #555;
+  padding: 2rem 0rem;
+}
+
+.menu-options-bar h2{
+  margin-top: 0;
+}
 
 .menu-section-container{
   display: grid;
