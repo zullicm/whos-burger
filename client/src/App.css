@@ -211,6 +211,7 @@ padding-left: 65%;
   text-shadow: 1px 1px 2px white;
   transition: all 1s ease;
   border-style: hidden;
+  border-radius: 5%;
 }
 
 .options-bar button:hover{
