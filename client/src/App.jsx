@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage';
 import { UserContext } from './Context/user';
 import MenuPage from './Pages/MenuPage';
 import Footer from './Components/Footer';
+import AboutPage from './Pages/AboutPage';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
         <Route exact path='/' element={<HomePage />}/>
         <Route exact path='/menu' element={<MenuPage />}/>
         {/* <Route exact path='/botm' element={<BOTM />}/> */}
-        {/* <Route exact path='/about' element={<About />}/> */}
+        <Route exact path='/about' element={<AboutPage />}/>
         {/* <Route exact path='/contact' element={<Contact />}/> */}
         {/* <Route exact path='/cart' element={<Cart />}/> */}
         <Route exact path='/profile' element={<User />}/>
